@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Merienda:wght@300..900&display=swap');
+
+body{
+  background-color: #F4F2EE;
+}
+
+body{
+  font-family: "Merienda", serif;
+}
+h1{
+  font-family: "Courgette", serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+}
+#title-home{
+  background: linear-gradient(32deg, rgba(252,176,69,1) 23%, rgba(253,47,34,1) 60%, rgba(253,29,29,1) 79%, rgba(131,58,180,1) 94%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

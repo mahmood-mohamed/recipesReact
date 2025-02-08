@@ -1,0 +1,66 @@
+.card {
+    $colorGreen: #05a774;
+    $colorWhite: #fff;
+
+    background-color: $colorWhite;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 20px 8px;
+    border-radius: 1.25rem;
+    transition: transform .6s ease, box-shadow .6s ease;
+    
+    figure {
+        position: relative;
+        top: -35px;
+        overflow: hidden;
+        
+        img {
+            border-radius: 50%;
+            width: 60%;
+            transition: transform .6s .2s ease;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: 0px 4px 10px rgba($color: #bbbbbb, $alpha: 1.0);
+        
+        figure {
+            img {
+                transform: rotate(360deg);
+                box-shadow: 0px 7px 10px rgba($color: #bbbbbb, $alpha: 1.0);
+            }
+        }
+    }
+
+    h3 {
+        font-weight: 800;
+        font-size: 1.375rem;
+    }
+
+    p {
+        color: $colorGreen;
+        margin-bottom: 10px;
+    }
+
+    .btnSuccess {
+        color: $colorWhite;
+        background-color: $colorGreen;
+        padding: 7px 15px;
+        border-radius: 15px;
+        font-size: 20px;
+        margin-top: 10px;
+        font-weight: 700;
+        transition: background-color 0.5s ease, box-shadow 0.6s ease, transform 0.6s ease;
+
+        &:hover {
+            box-shadow: 0px 4px 10px #9c9c9c;
+            background-color: #059669;
+            transform: scale(1.01);
+        }
+    }
+}

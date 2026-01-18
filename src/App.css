@@ -1,19 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Merienda:wght@300..900&display=swap');
 
 body{
   background-color: #F4F2EE;
 }
 
-body{
-  font-family: "Merienda", serif;
+/* General Font */
+body {
+  font-family: 'Merienda', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
-h1{
-  font-family: "Courgette", serif;
-  font-weight: 900;
-  font-size: 2.2rem;
+
+/* Logo / Brand */
+.brand-font {
+  font-family: 'Courgette', cursive;
 }
-#title-home{
-  background: linear-gradient(32deg, rgba(252,176,69,1) 23%, rgba(253,47,34,1) 60%, rgba(253,29,29,1) 79%, rgba(131,58,180,1) 94%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  border-radius: 999px;
+  border: 2px solid #f1f1f1; /* space effect */
+  transition: background-color 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f97316; /* orange accent */
+}
+
+/* ==== Dark Mode Scrollbar ==== */
+.dark ::-webkit-scrollbar-track {
+  background-color: #1f2937; /* gray-800 */
+}
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #4b5563; /* gray-600 */
+  border-color: #1f2937;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #fb923c; /* orange-400 */
 }

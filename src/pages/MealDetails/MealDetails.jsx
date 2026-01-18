@@ -1,109 +1,98 @@
-import React, { useContext, useEffect, useState } from 'react'
-import style from './MealDetails.module.scss'
-import Sidebar from '../../components/Sidebar/Sidebar'
-import { categoriesContext } from '../../contexts/CategoriesContext'
-import { useNavigate, useParams } from 'react-router-dom';
-import Footer from '../../components/Footer/Footer';
-
+import { useParams, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { getMealById } from "../../services/mealsApi";
+import { setPageMeta } from "../../utils/seo";
+import MealIngredients from "./MealIngredients";
+import { MapPinned, Utensils } from "lucide-react";
+import MealDetailsSkeleton from "../../components/MealDetailsSkeleton/MealDetailsSkeleton";
+import YouTubeButton from './../../components/YouTubeButton/YouTubeButton';
+import CategoryAndAreaLinks from "../../components/CategoryAndAreaLinks/CategoryAndAreaLinks";
 
 export default function MealDetails() {
-
-  const { mealDetails, getMealsDetails, mealsData } = useContext(categoriesContext);
-  const { id } = useParams(); // Get meal ID from the URL
-  const navigate = useNavigate(); // لاستخدام التوجيه
-  
-  const [details, setDetails] = useState({});
-
+  const { id } = useParams();
+  const [meal, setMeal] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // 🔴 If ID is not number
-    if (!id || isNaN(id)) {
-      console.warn('Invalid Meal ID:', id);
-      navigate('/not-found'); // 🔄 Go to Notfound Page
-      return;
-    }
+    async function fetchMeal() {
+      try {
+        setLoading(true);
+        const data = await getMealById(id);
+        if (!data) throw new Error("Meal not found");
 
-    // ✅ If ID not valid in meals id
-    const mealExists = mealsData.some(meal => meal.idMeal === id);
-    if (!mealExists) {
-      console.warn('Meal not found:', id);
-      navigate('/not-found'); // 🔄 Go to Notfound Page
-      return;
-    }
+        setMeal(data);
 
-    // ✅ If ID correct
-    getMealsDetails(id);
-  }, [id, mealsData, navigate, getMealsDetails]);
-
-  useEffect(() => {
-    if (mealDetails && Object.keys(mealDetails).length > 0) {
-      setDetails(mealDetails);
-    }
-  }, [mealDetails]);
-
-  // Extract ingredients dynamically
-  const getIngredients = () => {
-    if (!details || Object.keys(details).length === 0) return [];
-
-    const ingredients = [];
-    for (let i = 1; i <= 20; i++) {
-      const ingredient = details[`strIngredient${i}`];
-      const measure = details[`strMeasure${i}`];
-
-      if (ingredient && ingredient.trim() !== '') {
-        ingredients.push({ ingredient, measure: measure || '' });
+        setPageMeta(
+          `${data.strMeal} | Recipes Food`,
+          data.strInstructions.slice(0, 150)
+        );
+      } catch (error) {
+        toast.error(
+          error?.message || "Failed to load meal details. Please try again later."
+        );
+      } finally {
+        setLoading(false);
       }
     }
-    return ingredients;
-  };
+
+    fetchMeal();
+  }, [id]);
+
+  if (loading) return <MealDetailsSkeleton />;
+  if (!meal) return <p className="text-center py-6">Meal not found</p>;
 
   return (
-    <>
-      <div className='sm:flex flex-col sm:flex-row'>
-        <Sidebar/>
-        <div className='container py-6 gap-5 flex flex-col lg:flex-row lg:grid lg:grid-cols-3'>
-          <div>
-            <h1>{details.strMeal}</h1>
-            <img src={details.strMealThumb} className='w-full rounded-xl' alt={details.strMeal}/>
-            <div className='flex gap-3 justify-center py-4'>
-              {details.strYoutube && (
-                <a href={details.strYoutube} target='_blank' rel="noopener noreferrer"  className={style.btnDanger}>
-                    <i className="fa-brands fa-youtube"></i>
-                    Youtube
-                </a>
-              )}
-              {details.strSource && (
-                <a href={details.strSource} target='_blank' rel="noopener noreferrer"  className={style.btnSuccess}>
-                  <i className="fa-solid fa-globe"></i>
-                  Source
-                </a>
-              )}
+    <section className="max-w-6xl mx-auto space-y-8" aria-label={`${meal.strMeal} recipe`}>
+
+      {/* Header Grid */}
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className="overflow-hidden rounded-2xl shadow-lg">
+          <img
+            src={meal.strMealThumb}
+            alt={meal.strMeal}
+            loading="lazy"
+            className="w-full h-full object-cover hover:scale-105 transition duration-300"
+          />
+        </div>
+
+        <div className="space-y-4">
+          {/* Title */}
+          <h1 className="text-xl font-bold">{meal.strMeal}</h1>
+
+          {/* Category & Area Links */}
+          <CategoryAndAreaLinks
+            strCategory={meal.strCategory}
+            strArea={meal.strArea}
+          />
+
+          {/* Tags */}
+          {meal.strTags && (
+            <div className="flex flex-wrap items-center gap-2 text-sm mt-2" aria-label="Meal Tags">
+              <span className="font-semibold text-gray-700 dark:text-gray-300">Tags:</span>
+              {meal.strTags.split(",").map((tag) => (
+                <span
+                  key={tag}
+                  className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
-          </div>
+          )}
 
-          <div className='mt-12'>
-            <p>{details.strInstructions || 'No instructions available.'}</p>
-          </div>
-          <div className='bg-white px-4 py-4 mt-3 rounded-xl'>
-            <h2 className='font-bold text-2xl border-b-2 mb-4 py-1 border-gray-500'>Ingredients</h2>
-            <ul className={style.ul}>
-              { getIngredients().length > 0 ? (
-                  getIngredients().map((item, index) => (
-                    <li key={index} className={style.liItem}>
-                      <span>{item.ingredient}:</span>
-                      <span>{item.measure}</span>
-                    </li>
-                  ))
-                ) : (
-                  <li>No ingredients available.</li>
-                )
+          {/* Description */}
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+            {meal.strInstructions}
+          </p>
 
-              }
-            </ul>
-          </div>
+          {/* YouTube Button */}
+          {meal.strYoutube &&  <YouTubeButton strYoutube={meal.strYoutube} strMeal={meal.strMeal} />}
         </div>
       </div>
-      <Footer/>
-    </>
-  )
+
+      {/* Ingredients */}
+      <MealIngredients meal={meal} />
+    </section>
+  );
 }

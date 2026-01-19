@@ -14,17 +14,16 @@ The app focuses on performance, clean architecture, accessibility, and a smooth 
 
 ## ✨ Features
 
-* 🔍 **Search meals** by name with debounce & highlighted results
-* 🗂️ **Browse by Categories**
-* 🧂 **Browse by Ingredients**
-* 🌍 **Browse by Areas (Countries)**
-* 🔠 **Filter meals by first letter**
-* 🎲 **Random Meal page** with reload button
-* 💾 **Cached data & background fetching** (TanStack Query)
-* ⚡ **Skeleton loaders** for better UX
-* 🌙 **Dark / Light mode support**
-* ♿ **Accessible & semantic HTML structure**
-* 📱 **Fully responsive design**
+*  **Search meals** by name to find specific results
+*  **Browse by Categories**
+*  **Browse by Ingredients**
+*  **Browse by Areas (Countries)**
+*  **Filter meals by first letter**
+*  **Random Meal page** with reload button
+*  **Skeleton loaders** for better UX
+*  **Dark / Light mode support**
+*  **Accessible & semantic HTML structure**
+*  **Fully responsive design**
 
 ---
 
@@ -35,6 +34,7 @@ The app focuses on performance, clean architecture, accessibility, and a smooth 
 * **Axios**
 * **Tailwind CSS**
 * **Lucide Icons**
+* **Framer Motion**
 * **TheMealDB API**
 
 ---
@@ -44,11 +44,10 @@ The app focuses on performance, clean architecture, accessibility, and a smooth 
 ```text
 src/
 ├── components/       # Reusable UI components
+├── data/             # Static data
+├── hooks/            # Custom hooks
 ├── pages/            # Application pages
 ├── services/         # API layer (mealsApi)
-├── hooks/            # Custom hooks
-├── layouts/          # App layouts
-├── assets/           # Images & static assets
 └── utils/            # Helper functions
 ```
 
@@ -98,9 +97,12 @@ npm run dev
 ## 📸 Screenshots
 
 > *![Home page](<Recipes Food _ Discover Recipes .png>)*
+> ![Ingredients page](<Recipes Food _ Ingredients-2.png>)
+> *![Random Meal page](<Recipes Food _ Random Meal.png>)*
+> *![Areas page](<Recipes Food _ Areas.png>)*
+
 
 ---
-
 ## 🧪 Future Improvements
 
 * 🌐 Multi-language support (Arabic / English)

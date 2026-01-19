@@ -1,16 +1,127 @@
-# recipesReact
+# 🍽️ Meals Explorer App
 
-## Website Recipes - A Recipe Finder App
+A modern meals exploration web application built with **React**, offering a complete browsing experience using data from **TheMealDB API**.
 
-### This project is a recipe finder website built using SaaS, TailwindCSS, and ReactJS. It allows users to search for various recipes using a Free Recipe API. The app provides an intuitive and responsive design, leveraging the power of TailwindCSS for quick styling and ReactJS for seamless UI interactions.
+The app focuses on performance, clean architecture, accessibility, and a smooth user experience.
+
 ---
-## Built a responsive, accessible navigation bar with dark/light mode and optimized search experience using React and  Tailwind CSS.
+
+## 🚀 Live Demo
+
+> *[Live Demo](https://mahmood-mohamed.github.io/recipesReact/)*
+
 ---
 
+## ✨ Features
 
-## Key Features:
+* 🔍 **Search meals** by name with debounce & highlighted results
+* 🗂️ **Browse by Categories**
+* 🧂 **Browse by Ingredients**
+* 🌍 **Browse by Areas (Countries)**
+* 🔠 **Filter meals by first letter**
+* 🎲 **Random Meal page** with reload button
+* 💾 **Cached data & background fetching** (TanStack Query)
+* ⚡ **Skeleton loaders** for better UX
+* 🌙 **Dark / Light mode support**
+* ♿ **Accessible & semantic HTML structure**
+* 📱 **Fully responsive design**
 
-### -Search for recipes by ingredients or dish name.
-### -Fetch data from a Free Recipe API.
-### -Modern and responsive UI using TailwindCSS.
-### -Built with ReactJS for a fast and interactive user experience.
+---
+
+## 🧱 Tech Stack
+
+* **React**
+* **React Router DOM**
+* **Axios**
+* **Tailwind CSS**
+* **Lucide Icons**
+* **TheMealDB API**
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+├── components/       # Reusable UI components
+├── pages/            # Application pages
+├── services/         # API layer (mealsApi)
+├── hooks/            # Custom hooks
+├── layouts/          # App layouts
+├── assets/           # Images & static assets
+└── utils/            # Helper functions
+```
+
+---
+
+## 🔌 API Integration
+
+All API calls are centralized in:
+
+```text
+src/services/mealsApi.js
+```
+
+This ensures:
+
+* Clean separation of concerns
+* Easy maintenance
+* Reusable data-fetching logic
+
+---
+
+## 🧠 UX & Performance Enhancements
+
+* Smooth scroll-to-top button
+* Empty & error states handled gracefully
+
+---
+https://.github.io/recipesReact/
+## 🛠️ Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/mahmood-mohamed/recipesReact.git
+
+# Navigate to the project directory
+cd recipesReact
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
+
+---
+
+## 📸 Screenshots
+
+> *![Home page](<Recipes Food _ Discover Recipes .png>)*
+
+---
+
+## 🧪 Future Improvements
+
+* 🌐 Multi-language support (Arabic / English)
+* 🧾 Pagination or infinite scrolling
+
+---
+
+## 👨‍💻 Author
+
+**Mahmoud Mohamed**
+Front-End / Full Stack Developer
+
+* LinkedIn: *https://github.com/mahmood-mohamed*
+* GitHub: *https://www.linkedin.com/in/mahmoud.mo/*
+
+---
+
+## ⭐ Acknowledgments
+
+* [TheMealDB API](https://www.themealdb.com/) for the amazing free API
+
+---
+
+> If you like this project, feel free to ⭐ the repository!

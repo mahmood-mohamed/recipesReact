@@ -96,10 +96,10 @@ npm run dev
 
 ## 📸 Screenshots
 
-> *![Home page](<Recipes Food _ Discover Recipes .png>)*
-> ![Ingredients page](<Recipes Food _ Ingredients-2.png>)
-> *![Random Meal page](<Recipes Food _ Random Meal.png>)*
-> *![Areas page](<Recipes Food _ Areas.png>)*
+> *![Home page](<public/assets/Recipes Food _ Discover Recipes .png>)*
+> ![Ingredients page](<public/assets/Recipes Food _ Ingredients-2.png>)
+> *![Random Meal page](<public/assets/Recipes Food _ Random Meal.png>)*
+> *![Areas page](<public/assets/Recipes Food _ Areas.png>)*
 
 
 ---

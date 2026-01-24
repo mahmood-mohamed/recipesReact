@@ -11,7 +11,7 @@ Built with **React**, **React Router**, and **Tailwind CSS**, focusing on clean 
 
 ---
 
-## ✨ Features
+## 🎯 Features
 
 *  **Search meals** by name to find specific results
 *  **Browse by Categories**
@@ -93,19 +93,28 @@ npm run dev
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots from application
 
-> *![Home page](<public/assets/Recipes Food _ Discover Recipes .png>)*
-> ![Ingredients page](<public/assets/Recipes Food _ Ingredients-2.png>)
-> *![Random Meal page](<public/assets/Recipes Food _ Random Meal.png>)*
-> *![Areas page](<public/assets/Recipes Food _ Areas.png>)*
+### 🏠 Home Page – Discover Recipes
+![Home page](public/assets/home.png)
+
+### 🍴 Categories Page – Browse Meals by Category
+![Ingredients page](public/assets/categories.png)
+
+### 🧺 Ingredients Page – Browse Meals by Ingredient
+![Ingredients page](public/assets/ingredients.png)
+
+### 🎲 Random Meal Page – Get Inspired Instantly
+![Random Meal page](public/assets/random_meal.png)
+
+### 🌍 Areas Page – Explore Meals by Country
+![Areas page](public/assets/areas.png)
 
 
 ---
 ## 🧪 Future Improvements
 
 * 🌐 Multi-language support (Arabic / English)
-* 🧾 Pagination or infinite scrolling
 
 ---
 

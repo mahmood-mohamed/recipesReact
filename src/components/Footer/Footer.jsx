@@ -87,7 +87,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="https://linkedin.com/in/mahmoud.mo"
+                  href="https://www.linkedin.com/in/mahmoud-mo"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit LinkedIn profile"

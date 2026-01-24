@@ -385,7 +385,7 @@ to {
                     hover:text-gray-900 dark:hover:text-white\r
                     hover:scale-110\r
                     transition\r
-                  `,children:T.jsx(a2,{className:"w-6 h-6"})})}),T.jsx("li",{children:T.jsx("a",{href:"https://linkedin.com/in/mahmoud.mo",target:"_blank",rel:"noopener noreferrer","aria-label":"Visit LinkedIn profile",title:"LinkedIn",className:`\r
+                  `,children:T.jsx(a2,{className:"w-6 h-6"})})}),T.jsx("li",{children:T.jsx("a",{href:"https://www.linkedin.com/in/mahmoud-mo",target:"_blank",rel:"noopener noreferrer","aria-label":"Visit LinkedIn profile",title:"LinkedIn",className:`\r
                     hover:text-blue-600\r
                     hover:scale-110\r
                     transition\r

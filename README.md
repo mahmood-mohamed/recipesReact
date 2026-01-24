@@ -1,8 +1,7 @@
 # 🍽️ Meals Explorer App
 
-A modern meals exploration web application built with **React**, offering a complete browsing experience using data from **TheMealDB API**.
-
-The app focuses on performance, clean architecture, accessibility, and a smooth user experience.
+Food Explorer is a modern React-based food discovery web application that allows users to explore meals from around the world by categories, ingredients, areas, search, and random selection.
+Built with **React**, **React Router**, and **Tailwind CSS**, focusing on clean UI, reusable components, and smooth user experience.
 
 ---
 

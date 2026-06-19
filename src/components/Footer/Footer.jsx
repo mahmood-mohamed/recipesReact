@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Briefcase, Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "/assets/logo.png";
 import { logoBrand } from "../../data/navLinks";
@@ -32,9 +32,9 @@ export default function Footer() {
         ">
 
           {/* Brand */}
-          <Link 
-            to="/" 
-            aria-label="Go to homepage" 
+          <Link
+            to="/"
+            aria-label="Go to homepage"
             className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-orange-400 rounded"
           >
             <img
@@ -70,6 +70,18 @@ export default function Footer() {
             <ul className="flex gap-6 justify-center sm:justify-start">
               <li>
                 <a
+                  href="https://portfolio-mahm0ud.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit my Portfolio"
+                  title="Portfolio"
+                  className="hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
+                >
+                  <Briefcase className="w-6 h-6" />
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://github.com/mahmood-mohamed"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -81,7 +93,7 @@ export default function Footer() {
                     transition
                   "
                 >
-                  <Github className="w-6 h-6" />
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" xmlns="http://www.w3.org/2000/svg"><path d="M9 22v-3q0-2 1-3A7 6.5 0 0 1 5 5Q4 3 5 1q3 0 4 2q3.5-1 7 0q1-2 4-2q1 2 0 4a7 6.5 0 0 1-5 11q1 1 1 3v3m-7-3c-4 1-4-2-7-3" /></svg>
                 </a>
               </li>
 
@@ -98,7 +110,7 @@ export default function Footer() {
                     transition
                   "
                 >
-                  <Linkedin className="w-6 h-6" />
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="2" /><path d="M2 9h4v12H2Zm20 12h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 12 0Z" /></svg>
                 </a>
               </li>
 
@@ -124,15 +136,25 @@ export default function Footer() {
         <hr className="border-gray-200 dark:border-gray-700" />
 
         {/* Bottom */}
-        <div className="py-6 text-center text-sm">
+        <div className="pt-6 text-center text-sm">
           <p>
             © 2026{" "}
-            <span className="
+            <a
+              href="https://portfolio-mahm0ud.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Mahmoud's Portfolio"
+              title="Mahmoud's Portfolio"
+              className="
               font-medium
               text-gray-900 dark:text-white
+              hover:text-orange-500
+              dark:hover:text-orange-400
+              transition-colors
+              focus:outline-none focus:ring-2 focus:ring-orange-400 rounded
             ">
               Mahmoud Mohamed
-            </span>
+            </a>
             . All rights reserved.
           </p>
         </div>
